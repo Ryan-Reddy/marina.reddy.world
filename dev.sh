@@ -14,7 +14,8 @@ if [ ! -d "node_modules" ]; then
 fi
 
 # Start the development server
-echo "🌐 Starting Vite dev server at http://localhost:3000"
+echo "🌐 Starting Vite dev server at http://localhost:6969"
+echo "💫 Server accessible on local network - check terminal output for network URL"
 echo "✨ Press Ctrl+C to stop the server"
 echo ""
 

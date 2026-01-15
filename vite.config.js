@@ -10,7 +10,7 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0', // Allows access from local network
-    port: 3000,
+    port: 6969,
     open: true,
     strictPort: true
   }
