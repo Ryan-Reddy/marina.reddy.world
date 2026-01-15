@@ -5,7 +5,7 @@ export function renderBookCard() {
         <div class="container">
             <div class="book-card">
                 <div class="book-image-container">
-                    <img src="/book-cover.jpg" alt="Returning to the Heart Book Cover" class="book-cover">
+                    <img src="/book-cover.png" alt="Returning to the Heart Book Cover" class="book-cover">
                 </div>
                 
                 <div class="book-info">
