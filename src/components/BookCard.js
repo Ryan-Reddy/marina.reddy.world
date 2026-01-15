@@ -4,6 +4,10 @@ export function renderBookCard() {
         
         <div class="container">
             <div class="book-card">
+                <div class="botanical-decoration top-left"></div>
+                <div class="botanical-decoration top-right"></div>
+                <div class="botanical-decoration bottom-left"></div>
+                <div class="botanical-decoration bottom-right"></div>
                 <div class="book-image-container">
                     <img src="/book-cover.png" alt="Returning to the Heart Book Cover" class="book-cover">
                 </div>
@@ -34,11 +38,11 @@ export function renderBookCard() {
                         </div>
                     </div>
                     
+                    <div class="tagline">Right now.</div>
+                    
                     <a href="https://www.amazon.nl/-/en/Marina-Avram/dp/B0GFGWVRR7" target="_blank" class="buy-button">
                         Available on Amazon
                     </a>
-                    
-                    <div class="tagline">Right now.</div>
                 </div>
             </div>
         </div>

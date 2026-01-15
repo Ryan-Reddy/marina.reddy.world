@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "marina-reddy-world"
+    "default": "getreddyworld"
   },
   "targets": {
-    "marina-reddy-world": {
+    "getreddyworld": {
       "hosting": {
-        "heart": [
-          "heart"
+        "marina-avram": [
+          "marina-avram"
         ]
       }
     }

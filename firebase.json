@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "heart",
+    "site": "marina-avram",
     "public": "dist",
     "ignore": [
       "firebase.json",
