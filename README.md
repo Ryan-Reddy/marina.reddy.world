@@ -19,13 +19,15 @@ A beautiful landing page for "Returning to the Heart: Living Coherence in a Fast
    ```
 
 2. **Add your book cover image**: 
-   - Save your book cover image as `book-cover.jpg` in the root directory
-   - Or update the `src` in `index.html` to match your image filename
+   - Save your book cover image as `book-cover.jpg` in the `public/` directory
+   - The image will be automatically served at `/book-cover.jpg`
 
 3. **Run development server**:
    ```bash
-   npm run dev
+   ./dev.sh
    ```
+   Or directly: `npm run dev`
+   
    This will start Vite dev server at http://localhost:3000
 
 4. **Build for production**:

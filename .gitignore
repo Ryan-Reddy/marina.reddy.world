@@ -25,4 +25,10 @@ dist-ssr
 
 # Firebase
 .firebase
-.firebaserc
+
+# macOS
+.DS_Store
+
+# Environment
+.env
+.env.local
