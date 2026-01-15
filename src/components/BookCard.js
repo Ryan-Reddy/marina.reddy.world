@@ -1,0 +1,45 @@
+export function renderBookCard() {
+    return `
+        <div class="background-gradient"></div>
+        
+        <div class="container">
+            <div class="book-card">
+                <div class="book-image-container">
+                    <img src="/book-cover.jpg" alt="Returning to the Heart Book Cover" class="book-cover">
+                </div>
+                
+                <div class="book-info">
+                    <h1 class="book-title">Returning to the Heart</h1>
+                    <p class="book-subtitle">Living Coherence in a Fast World</p>
+                    <p class="author">by Marina Avram</p>
+                    
+                    <div class="description">
+                        <p>Returning to the Heart is a gentle, grounded invitation to remember what the body already knows.</p>
+                        <p>Blending neuroscience, ancestral wisdom, and embodied daily practice, this book explores the heart not only as an emotional center, but as an organ of perception — one that listens, regulates, and connects us to the Earth and to one another.</p>
+                    </div>
+                    
+                    <div class="details">
+                        <div class="detail-item">
+                            <span class="detail-label">Format:</span>
+                            <span class="detail-value">Paperback</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pages:</span>
+                            <span class="detail-value">104</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Published:</span>
+                            <span class="detail-value">5 Jan. 2026</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://www.amazon.nl/-/en/Marina-Avram/dp/B0GFGWVRR7" target="_blank" class="buy-button">
+                        Available on Amazon
+                    </a>
+                    
+                    <div class="tagline">Right now.</div>
+                </div>
+            </div>
+        </div>
+    `;
+}

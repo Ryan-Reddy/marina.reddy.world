@@ -2,6 +2,27 @@
 
 A beautiful landing page for "Returning to the Heart: Living Coherence in a Fast World" by Marina Avram.
 
+## Project Structure
+
+```
+marina.reddy.world/
+├── .github/
+│   └── workflows/       # GitHub Actions CI/CD
+├── public/              # Static assets
+│   └── book-cover.jpg   # Book cover image
+├── src/
+│   ├── components/      # UI components
+│   │   └── BookCard.js  # Book card component
+│   ├── styles/          # CSS files
+│   │   └── main.css     # Main stylesheet
+│   └── main.js          # Application entry point
+├── index.html           # HTML entry point
+├── vite.config.js       # Vite configuration
+├── firebase.json        # Firebase config
+├── dev.sh              # Development script
+└── package.json         # Dependencies
+```
+
 ## Features
 
 - 🌤️ Beautiful sky-blue gradient background
