@@ -23,21 +23,6 @@ export function renderBookCard() {
                     </div>
                     <button class="read-more-btn" id="readMoreBtn" onclick="toggleDescription()">Read more</button>
                     
-                    <div class="details">
-                        <div class="detail-item">
-                            <span class="detail-label">Format:</span>
-                            <span class="detail-value">Paperback</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Pages:</span>
-                            <span class="detail-value">104</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Published:</span>
-                            <span class="detail-value">5 Jan. 2026</span>
-                        </div>
-                    </div>
-                    
                     <div class="tagline">Right now.</div>
                     
                     <a href="https://www.amazon.nl/-/en/Marina-Avram/dp/B0GFGWVRR7" target="_blank" class="buy-button">

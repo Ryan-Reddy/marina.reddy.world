@@ -1,7 +1,7 @@
 import { renderBookCard } from './components/BookCard.js';
 import './styles/main.css';
 
-// Initialize the app
+// Initialize the app - Auto-deployed to heart.reddy.world 💙
 const app = document.getElementById('app');
 if (app) {
     app.innerHTML = renderBookCard();

@@ -42,60 +42,60 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 .background-gradient::before {
     background: 
-        radial-gradient(ellipse at 20% 30%, rgba(168, 213, 226, 0.6) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(155, 201, 217, 0.5) 0%, transparent 50%),
-        radial-gradient(ellipse at 40% 70%, rgba(184, 212, 216, 0.4) 0%, transparent 45%);
+        radial-gradient(ellipse at 20% 30%, rgba(255, 160, 120, 0.7) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(255, 190, 140, 0.65) 0%, transparent 50%),
+        radial-gradient(ellipse at 40% 70%, rgba(255, 210, 160, 0.6) 0%, transparent 45%);
     animation: aurora1 20s ease-in-out infinite alternate;
 }
 
 .background-gradient::after {
     background: 
-        radial-gradient(ellipse at 60% 40%, rgba(143, 189, 208, 0.5) 0%, transparent 50%),
-        radial-gradient(ellipse at 30% 80%, rgba(217, 201, 184, 0.4) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 60%, rgba(232, 212, 184, 0.45) 0%, transparent 50%);
+        radial-gradient(ellipse at 60% 40%, rgba(255, 140, 160, 0.6) 0%, transparent 50%),
+        radial-gradient(ellipse at 30% 80%, rgba(255, 180, 130, 0.55) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(255, 200, 150, 0.6) 0%, transparent 50%);
     animation: aurora2 25s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes aurora1 {
     0% {
         transform: translate(0, 0) scale(1);
-        opacity: 0.4;
+        opacity: 0.6;
     }
     33% {
         transform: translate(-5%, 3%) scale(1.05);
-        opacity: 0.5;
+        opacity: 0.7;
     }
     66% {
         transform: translate(3%, -2%) scale(0.98);
-        opacity: 0.35;
+        opacity: 0.5;
     }
     100% {
         transform: translate(-2%, 4%) scale(1.02);
-        opacity: 0.45;
+        opacity: 0.65;
     }
 }
 
 @keyframes aurora2 {
     0% {
         transform: translate(0, 0) scale(1);
-        opacity: 0.35;
+        opacity: 0.55;
     }
     33% {
         transform: translate(4%, -3%) scale(1.03);
-        opacity: 0.45;
+        opacity: 0.65;
     }
     66% {
         transform: translate(-3%, 3%) scale(0.97);
-        opacity: 0.3;
+        opacity: 0.5;
     }
     100% {
         transform: translate(2%, -4%) scale(1.04);
-        opacity: 0.4;
+        opacity: 0.6;
     }
 }
 
@@ -121,8 +121,8 @@ body {
         );
     backdrop-filter: blur(25px);
     border-radius: 30px;
-    padding: 35px 30px;
-    max-width: 600px;
+    padding: 40px 30px;
+    max-width: 500px;
     width: 100%;
     max-height: calc(100vh - 40px);
     overflow-y: auto;
@@ -136,6 +136,25 @@ body {
     position: relative;
 }
 
+/* Custom scrollbar to maintain rounded corners */
+.book-card::-webkit-scrollbar {
+    width: 8px;
+}
+
+.book-card::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 30px 0;
+}
+
+.book-card::-webkit-scrollbar-thumb {
+    background: rgba(212, 165, 154, 0.3);
+    border-radius: 10px;
+}
+
+.book-card::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 165, 154, 0.5);
+}
+
 .book-card::before {
     content: '';
     position: absolute;
@@ -145,8 +164,8 @@ body {
     height: 50%;
     background: radial-gradient(
         ellipse at center,
-        rgba(245, 180, 175, 0.65) 0%,
-        rgba(240, 185, 180, 0.45) 40%,
+        rgba(255, 165, 155, 0.7) 0%,
+        rgba(250, 175, 165, 0.5) 40%,
         transparent 70%
     );
     border-radius: 50%;
@@ -165,8 +184,8 @@ body {
     height: 55%;
     background: radial-gradient(
         ellipse at center,
-        rgba(238, 175, 170, 0.6) 0%,
-        rgba(235, 180, 175, 0.4) 45%,
+        rgba(248, 160, 155, 0.65) 0%,
+        rgba(245, 170, 165, 0.45) 45%,
         transparent 70%
     );
     border-radius: 50%;
@@ -285,14 +304,14 @@ body {
 .book-image-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     position: relative;
     z-index: 2;
 }
 
 .book-cover {
     width: 100%;
-    max-width: 220px;
+    max-width: 180px;
     height: auto;
     border-radius: 12px;
     box-shadow: 
@@ -315,45 +334,49 @@ body {
 
 .book-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.3rem;
-    font-weight: 500;
-    color: #2a3530;
-    margin-bottom: 10px;
-    line-height: 1.25;
-    letter-spacing: 0.01em;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a2823;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    letter-spacing: 0.015em;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .book-subtitle {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    font-weight: 300;
-    color: #4a5a55;
-    margin-bottom: 8px;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #2a3833;
+    margin-bottom: 6px;
     font-style: italic;
+    line-height: 1.4;
 }
 
 .author {
-    font-size: 0.95rem;
-    color: #6a7a75;
-    margin-bottom: 20px;
-    font-weight: 300;
+    font-size: 0.9rem;
+    color: #4a5550;
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
 }
 
 .description {
     text-align: left;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 }
 
 .description p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.6;
-    color: #3d4a45;
-    margin-bottom: 12px;
-    font-weight: 300;
+    color: #2d3a35;
+    margin-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
 .description.collapsed {
-    max-height: 80px;
+    max-height: 70px;
     overflow: hidden;
     position: relative;
 }
@@ -364,24 +387,24 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 40px;
+    height: 35px;
     background: linear-gradient(to bottom, transparent, rgba(250, 235, 230, 0.95));
 }
 
 .read-more-btn {
     background: none;
     border: none;
-    color: #6a7d72;
+    color: #5a6d62;
     font-size: 0.85rem;
     cursor: pointer;
     padding: 8px 0;
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: underline;
     transition: color 0.3s ease;
 }
 
 .read-more-btn:hover {
-    color: #556a5f;
+    color: #3a4d42;
 }
 
 .details {
@@ -413,16 +436,17 @@ body {
 
 .buy-button {
     display: inline-block;
-    padding: 14px 38px;
+    padding: 12px 32px;
     background: linear-gradient(135deg, #9BAAA0 0%, #7a8d82 100%);
     color: white;
     text-decoration: none;
     border-radius: 50px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 400;
     transition: all 0.3s ease;
     box-shadow: 0 6px 18px rgba(120, 130, 125, 0.25);
-    margin-top: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
 }
 
 .buy-button:hover {
@@ -433,13 +457,14 @@ body {
 
 .tagline {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    font-weight: 400;
-    color: #5a6d63;
-    margin: 25px 0;
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: #3a4d45;
+    margin: 20px 0;
     font-style: normal;
-    opacity: 0.85;
-    letter-spacing: 0.02em;
+    opacity: 0.9;
+    letter-spacing: 0.03em;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
 }
 
 /* Responsive design */
