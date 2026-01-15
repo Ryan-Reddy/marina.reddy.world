@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "marina-reddy-world"
+  },
+  "targets": {
+    "marina-reddy-world": {
+      "hosting": {
+        "marina-avram": [
+          "marina-avram"
+        ]
+      }
+    }
   }
 }
