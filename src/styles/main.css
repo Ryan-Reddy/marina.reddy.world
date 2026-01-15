@@ -14,13 +14,36 @@ body {
     position: relative;
 }
 
-/* Aurora borealis animated sky gradient background */
-.background-gradient {
-    position: fixed;
+/* Aurora Background Component - Reusable */
+.aurora-background {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.aurora-base {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.aurora-layer-1,
+.aurora-layer-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Warm variant - for main page */
+.aurora-warm .aurora-base {
     background: linear-gradient(
         to bottom,
         #A8D5E2 0%,
@@ -31,34 +54,56 @@ body {
         #E8D4B8 85%,
         #F5E6D3 100%
     );
-    z-index: -1;
 }
 
-.background-gradient::before,
-.background-gradient::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.6;
-}
-
-.background-gradient::before {
+.aurora-warm .aurora-layer-1 {
     background: 
         radial-gradient(ellipse at 20% 30%, rgba(255, 160, 120, 0.7) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 20%, rgba(255, 190, 140, 0.65) 0%, transparent 50%),
         radial-gradient(ellipse at 40% 70%, rgba(255, 210, 160, 0.6) 0%, transparent 45%);
     animation: aurora1 20s ease-in-out infinite alternate;
+    opacity: 0.6;
 }
 
-.background-gradient::after {
+.aurora-warm .aurora-layer-2 {
     background: 
         radial-gradient(ellipse at 60% 40%, rgba(255, 140, 160, 0.6) 0%, transparent 50%),
         radial-gradient(ellipse at 30% 80%, rgba(255, 180, 130, 0.55) 0%, transparent 50%),
         radial-gradient(ellipse at 70% 60%, rgba(255, 200, 150, 0.6) 0%, transparent 50%);
     animation: aurora2 25s ease-in-out infinite alternate-reverse;
+    opacity: 0.6;
+}
+
+/* Cool variant - for modals */
+.aurora-cool .aurora-base {
+    background: linear-gradient(
+        to bottom,
+        #B5E2F5 0%,
+        #A5D8ED 15%,
+        #95CEE5 30%,
+        #A8D8E8 50%,
+        #C5E5F0 70%,
+        #D5EDF5 85%,
+        #E8F5FA 100%
+    );
+}
+
+.aurora-cool .aurora-layer-1 {
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(140, 200, 240, 0.65) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(160, 210, 245, 0.6) 0%, transparent 50%),
+        radial-gradient(ellipse at 40% 70%, rgba(180, 220, 250, 0.55) 0%, transparent 45%);
+    animation: aurora1 20s ease-in-out infinite alternate;
+    opacity: 0.7;
+}
+
+.aurora-cool .aurora-layer-2 {
+    background: 
+        radial-gradient(ellipse at 60% 40%, rgba(150, 190, 230, 0.6) 0%, transparent 50%),
+        radial-gradient(ellipse at 30% 80%, rgba(170, 215, 245, 0.55) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(190, 225, 250, 0.6) 0%, transparent 50%);
+    animation: aurora2 25s ease-in-out infinite alternate-reverse;
+    opacity: 0.7;
 }
 
 @keyframes aurora1 {
@@ -164,8 +209,8 @@ body {
     height: 50%;
     background: radial-gradient(
         ellipse at center,
-        rgba(255, 165, 155, 0.7) 0%,
-        rgba(250, 175, 165, 0.5) 40%,
+        rgba(255, 200, 120, 0.65) 0%,
+        rgba(255, 180, 140, 0.5) 40%,
         transparent 70%
     );
     border-radius: 50%;
@@ -184,8 +229,8 @@ body {
     height: 55%;
     background: radial-gradient(
         ellipse at center,
-        rgba(248, 160, 155, 0.65) 0%,
-        rgba(245, 170, 165, 0.45) 45%,
+        rgba(255, 165, 155, 0.7) 0%,
+        rgba(255, 185, 165, 0.5) 45%,
         transparent 70%
     );
     border-radius: 50%;
@@ -532,5 +577,597 @@ body {
 @media (min-height: 800px) {
     .book-card {
         max-height: none;
+    }
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(240, 215, 210, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(210, 170, 165, 0.15);
+}
+
+.hamburger-menu:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #5a6d63;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Universal Modal System - DRY & Reusable */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.modal-overlay.transitioning-out {
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-container {
+    position: relative;
+    z-index: 2;
+    transform: translateY(20px);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0);
+}
+
+.modal-close-btn {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(240, 215, 210, 0.5);
+    border-radius: 50%;
+    font-size: 1.8rem;
+    color: #5a6d63;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1;
+    padding: 0;
+    z-index: 1003;
+    box-shadow: 0 4px 15px rgba(120, 130, 125, 0.2);
+}
+
+.modal-close-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(120, 130, 125, 0.3);
+}
+
+.modal-inner {
+    max-width: 600px;
+    width: 90vw;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+/* Menu Specific Styles */
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+    padding: 60px 40px;
+}
+
+.menu-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    font-weight: 500;
+    color: #1a2823;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 6px rgba(255, 255, 255, 0.4);
+    padding: 15px 30px;
+    position: relative;
+}
+
+.menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #3a4d45, transparent);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-item:hover {
+    color: #2a3d35;
+    transform: translateY(-5px);
+    text-shadow: 0 4px 12px rgba(255, 255, 255, 0.6);
+}
+
+.menu-item:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Content Modal Styles */
+.content-modal-wrapper {
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 200, 120, 0.3) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(255, 165, 155, 0.3) 0%, transparent 30%),
+        rgba(255, 253, 251, 0.95);
+    backdrop-filter: blur(25px);
+    border-radius: 30px;
+    padding: 50px 40px;
+    box-shadow: 
+        0 25px 70px rgba(210, 170, 165, 0.2),
+        0 10px 30px rgba(215, 180, 175, 0.15);
+    border: 1px solid rgba(240, 215, 210, 0.5);
+}
+
+.modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1a2823;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+.modal-content-text {
+    text-align: left;
+}
+
+.modal-content-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #2d3a35;
+    margin-bottom: 18px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.modal-content-text p:last-child {
+    margin-bottom: 0;
+}
+
+.modal-content-text em {
+    font-style: italic;
+    color: #3a4d45;
+}
+
+
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.menu-content {
+    position: relative;
+    z-index: 2;
+}
+
+.close-menu-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(240, 215, 210, 0.5);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #5a6d63;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    line-height: 1;
+    padding: 0;
+    z-index: 1002;
+}
+
+.close-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: rotate(90deg);
+}
+
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.menu-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #1a2823;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+}
+
+.menu-item:hover {
+    color: #3a4d45;
+    transform: translateY(-3px);
+    text-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* About Modal */
+.about-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.about-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.about-content {
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 200, 120, 0.3) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(255, 165, 155, 0.3) 0%, transparent 30%),
+        rgba(255, 253, 251, 0.95);
+    backdrop-filter: blur(25px);
+    border-radius: 30px;
+    padding: 50px 40px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 
+        0 25px 70px rgba(210, 170, 165, 0.2),
+        0 10px 30px rgba(215, 180, 175, 0.15);
+    border: 1px solid rgba(240, 215, 210, 0.5);
+    position: relative;
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(240, 215, 210, 0.5);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #5a6d63;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    line-height: 1;
+    padding: 0;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: rotate(90deg);
+}
+
+.about-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1a2823;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #2d3a35;
+    margin-bottom: 18px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-text em {
+    font-style: italic;
+    color: #3a4d45;
+}
+
+/* Contact Modal */
+.contact-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.contact-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.contact-content {
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 200, 120, 0.3) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(255, 165, 155, 0.3) 0%, transparent 30%),
+        rgba(255, 253, 251, 0.95);
+    backdrop-filter: blur(25px);
+    border-radius: 30px;
+    padding: 50px 40px;
+    max-width: 550px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 
+        0 25px 70px rgba(210, 170, 165, 0.2),
+        0 10px 30px rgba(215, 180, 175, 0.15);
+    border: 1px solid rgba(240, 215, 210, 0.5);
+    position: relative;
+    animation: slideIn 0.4s ease-out;
+}
+
+.contact-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1a2823;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #3a4d45;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 1px solid rgba(240, 215, 210, 0.5);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #2d3a35;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(155, 170, 160, 0.6);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(120, 130, 125, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #9BAAA0 0%, #7a8d82 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(120, 130, 125, 0.25);
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(120, 130, 125, 0.35);
+    background: linear-gradient(135deg, #aabab0 0%, #8a9d92 100%);
+}
+
+.form-success {
+    display: none;
+    text-align: center;
+    padding: 30px;
+}
+
+.form-success p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #3a4d45;
+    font-weight: 400;
+}
+
+/* Responsive for modals */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        top: 20px;
+        right: 20px;
+        width: 36px;
+        height: 36px;
+    }
+    
+    .modal-close-btn {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .content-modal-wrapper {
+        padding: 40px 30px;
+    }
+    
+    .modal-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .modal-content-text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .menu-item {
+        font-size: 2.5rem;
+        padding: 12px 25px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-modal-wrapper {
+        padding: 35px 25px;
+    }
+    
+    .modal-title {
+        font-size: 1.8rem;
+    }
+    
+    .modal-content-text p {
+        font-size: 0.9rem;
+    }
+    
+    .submit-btn {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+    }
+    
+    .menu-item {
+        font-size: 2.2rem;
+        gap: 30px;
     }
 }
