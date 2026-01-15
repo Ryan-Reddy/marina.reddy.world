@@ -13,10 +13,11 @@ export function renderBookCard() {
                     <p class="book-subtitle">Living Coherence in a Fast World</p>
                     <p class="author">by Marina Avram</p>
                     
-                    <div class="description">
+                    <div class="description collapsed" id="description">
                         <p>Returning to the Heart is a gentle, grounded invitation to remember what the body already knows.</p>
                         <p>Blending neuroscience, ancestral wisdom, and embodied daily practice, this book explores the heart not only as an emotional center, but as an organ of perception — one that listens, regulates, and connects us to the Earth and to one another.</p>
                     </div>
+                    <button class="read-more-btn" id="readMoreBtn" onclick="toggleDescription()">Read more</button>
                     
                     <div class="details">
                         <div class="detail-item">
