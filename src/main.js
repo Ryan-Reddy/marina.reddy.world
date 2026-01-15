@@ -1,5 +1,5 @@
-import './styles/main.css';
 import { renderBookCard } from './components/BookCard.js';
+import './styles/main.css';
 
 // Initialize the app
 const app = document.getElementById('app');
