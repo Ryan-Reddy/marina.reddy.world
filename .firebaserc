@@ -5,8 +5,8 @@
   "targets": {
     "marina-reddy-world": {
       "hosting": {
-        "marina-avram": [
-          "marina-avram"
+        "heart": [
+          "heart"
         ]
       }
     }

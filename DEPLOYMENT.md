@@ -1,14 +1,14 @@
 # Firebase Custom Domain Setup
 
 ## Configuration
-- **Site ID**: `marina-avram`
-- **Custom Domain**: `marina-avram.reddy.world` (or choose your own)
+- **Site ID**: `heart`
+- **Custom Domain**: `heart.reddy.world`
 
 ## Setup Steps
 
 ### 1. Create Firebase Hosting Site
 ```bash
-firebase hosting:sites:create marina-avram
+firebase hosting:sites:create heart
 ```
 
 ### 2. Add GitHub Secrets
@@ -21,19 +21,19 @@ Add these secrets:
 ### 3. Connect Custom Domain in Firebase Console
 
 1. Go to Firebase Console → Hosting
-2. Select the `marina-avram` site
+2. Select the `heart` site
 3. Click "Add custom domain"
-4. Enter: `marina-avram.reddy.world` (or your chosen subdomain)
+4. Enter: `heart.reddy.world`
 5. Firebase will provide DNS records to add
 
 ### 4. Add DNS Records to reddy.world
 
 Add these records to your `reddy.world` DNS (CloudFlare/Route53/etc):
 
-**For subdomain** (`marina-avram.reddy.world`):
+**For subdomain** (`heart.reddy.world`):
 ```
 Type: CNAME
-Name: marina-avram
+Name: heart
 Value: [provided by Firebase]
 ```
 
@@ -48,7 +48,7 @@ Value: [IP from Firebase]
 
 ```bash
 npm run build
-firebase deploy --only hosting:marina-avram
+firebase deploy --only hosting:heart
 ```
 
 ### 6. Verify GitHub Actions
@@ -72,5 +72,5 @@ Visit: http://localhost:3000
 
 ```bash
 npm run build
-firebase deploy --only hosting:marina-avram
+firebase deploy --only hosting:heart
 ```
