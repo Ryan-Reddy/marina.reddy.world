@@ -37,7 +37,7 @@ window.handleContactSubmit = async function(event) {
     // Create mailto link as fallback
     const subject = encodeURIComponent(`Message from ${data.name}`);
     const body = encodeURIComponent(`From: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`);
-    const mailtoLink = `mailto:marinaavram@proton.me?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:marinaearthheartcollective@proton.me?subject=${subject}&body=${body}`;
     
     // Open default email client
     window.location.href = mailtoLink;

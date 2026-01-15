@@ -209,8 +209,8 @@ body {
     height: 50%;
     background: radial-gradient(
         ellipse at center,
-        rgba(255, 200, 120, 0.65) 0%,
-        rgba(255, 180, 140, 0.5) 40%,
+        rgba(150, 200, 255, 0.7) 0%,
+        rgba(180, 220, 255, 0.55) 40%,
         transparent 70%
     );
     border-radius: 50%;
@@ -229,8 +229,8 @@ body {
     height: 55%;
     background: radial-gradient(
         ellipse at center,
-        rgba(255, 165, 155, 0.7) 0%,
-        rgba(255, 185, 165, 0.5) 45%,
+        rgba(160, 210, 255, 0.75) 0%,
+        rgba(190, 230, 255, 0.6) 45%,
         transparent 70%
     );
     border-radius: 50%;

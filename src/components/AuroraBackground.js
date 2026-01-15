@@ -3,23 +3,23 @@ export function renderAuroraBackground(variant = 'warm') {
         warm: {
             base: `linear-gradient(
                 to bottom,
-                #A8D5E2 0%,
-                #9BC9D9 15%,
-                #8FBDD0 30%,
-                #B8D4D8 50%,
-                #D9C9B8 70%,
-                #E8D4B8 85%,
-                #F5E6D3 100%
+                #F0F8FF 0%,
+                #E5F3FF 15%,
+                #D5EBFF 30%,
+                #C5E5FF 50%,
+                #B8DEFF 70%,
+                #A8D5F0 85%,
+                #9BC9E5 100%
             )`,
             aurora1: `
-                radial-gradient(ellipse at 20% 30%, rgba(255, 160, 120, 0.7) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(255, 190, 140, 0.65) 0%, transparent 50%),
-                radial-gradient(ellipse at 40% 70%, rgba(255, 210, 160, 0.6) 0%, transparent 45%)
+                radial-gradient(ellipse at 20% 30%, rgba(255, 220, 150, 0.85) 0%, rgba(255, 240, 200, 0.5) 30%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(150, 200, 255, 0.7) 0%, transparent 50%),
+                radial-gradient(ellipse at 40% 70%, rgba(180, 220, 255, 0.6) 0%, transparent 45%)
             `,
             aurora2: `
-                radial-gradient(ellipse at 60% 40%, rgba(255, 140, 160, 0.6) 0%, transparent 50%),
-                radial-gradient(ellipse at 30% 80%, rgba(255, 180, 130, 0.55) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 60%, rgba(255, 200, 150, 0.6) 0%, transparent 50%)
+                radial-gradient(ellipse at 60% 40%, rgba(200, 230, 255, 0.65) 0%, transparent 50%),
+                radial-gradient(ellipse at 30% 80%, rgba(160, 210, 255, 0.6) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(255, 235, 180, 0.75) 0%, rgba(255, 250, 220, 0.4) 35%, transparent 50%)
             `
         },
         cool: {
