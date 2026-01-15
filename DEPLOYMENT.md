@@ -1,8 +1,11 @@
 # Firebase Custom Domain Setup
 
+## ✅ LIVE: https://heart.reddy.world
+
 ## Configuration
-- **Site ID**: `heart`
+- **Site ID**: `marina-avram`
 - **Custom Domain**: `heart.reddy.world`
+- **Status**: ✅ Active and Live!
 
 ## Setup Steps
 
