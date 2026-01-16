@@ -157,14 +157,10 @@ body {
 /* Portrait-shaped overlay container - Instagram watercolor aesthetic */
 .book-card {
     background: 
-        radial-gradient(circle at 5% 15%, rgba(245, 215, 210, 0.35) 0%, transparent 25%),
-        radial-gradient(circle at 95% 85%, rgba(238, 205, 200, 0.3) 0%, transparent 25%),
-        linear-gradient(180deg, 
-            rgba(252, 245, 243, 0.88) 0%,
-            rgba(255, 250, 248, 0.90) 50%,
-            rgba(250, 243, 240, 0.88) 100%
-        );
-    backdrop-filter: blur(25px);
+        url('/instagramstylepink/14.png');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(16px);
     border-radius: 30px;
     padding: 40px 30px;
     max-width: 500px;
