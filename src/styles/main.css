@@ -157,10 +157,12 @@ body {
 /* Portrait-shaped overlay container - Instagram watercolor aesthetic */
 .book-card {
     background: 
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
         url('/instagramstylepink/14.png');
     background-size: cover;
     background-position: center;
     backdrop-filter: blur(16px);
+
     border-radius: 30px;
     padding: 40px 30px;
     max-width: 500px;
@@ -478,22 +480,22 @@ body {
 .buy-button {
     display: inline-block;
     padding: 12px 32px;
-    background: linear-gradient(135deg, #9BAAA0 0%, #7a8d82 100%);
+    background: linear-gradient(135deg, #A8D5E2 0%, #87CEEB 100%);
     color: white;
     text-decoration: none;
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 400;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 18px rgba(120, 130, 125, 0.25);
+    box-shadow: 0 6px 18px rgba(135, 206, 235, 0.25);
     margin-top: 8px;
     margin-bottom: 15px;
 }
 
 .buy-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(120, 130, 125, 0.35);
-    background: linear-gradient(135deg, #aabab0 0%, #8a9d92 100%);
+    box-shadow: 0 10px 25px rgba(135, 206, 235, 0.35);
+    background: linear-gradient(135deg, #B8E5F2 0%, #97DEFF 100%);
 }
 
 .tagline {
