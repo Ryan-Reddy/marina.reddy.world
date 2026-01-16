@@ -273,7 +273,7 @@ body {
 /* Botanical decorative elements - silhouetted style */
 .botanical-decoration {
     position: absolute;
-    opacity: 0.25;
+    opacity: 0.8;
     pointer-events: none;
     z-index: 1;
     animation: floatBotanical 15s ease-in-out infinite;
@@ -754,33 +754,29 @@ body {
 /* Content Modal Styles */
 .content-modal-wrapper {
     background: 
-        linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
-        url('/instagramstylepink/1.png');
+        url('/instagramstylepink/12.png');
     background-size: cover;
     background-position: center;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
     border-radius: 30px;
     padding: 50px 40px;
     box-shadow: 
         0 25px 70px rgba(210, 170, 165, 0.2),
         0 10px 30px rgba(215, 180, 175, 0.15);
     border: 1px solid rgba(240, 215, 210, 0.5);
-    filter: brightness(0.9) saturate(0.85);
 }
 
 /* Different backgrounds for different modals */
 #aboutModal .content-modal-wrapper {
     background: 
-        linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
-        url('/instagramstylepink/2.png');
+        url('/instagramstylepink/13.png');
     background-size: cover;
     background-position: center;
 }
 
 #contactModal .content-modal-wrapper {
     background: 
-        linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
-        url('/instagramstylepink/3.png');
+        url('/instagramstylepink/14.png');
     background-size: cover;
     background-position: center;
 }
