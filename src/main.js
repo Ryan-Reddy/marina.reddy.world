@@ -15,10 +15,10 @@ window.toggleDescription = function() {
     
     if (description.classList.contains('collapsed')) {
         description.classList.remove('collapsed');
-        btn.textContent = 'Read less';
+        btn.classList.add('expanded');
     } else {
         description.classList.add('collapsed');
-        btn.textContent = 'Read more';
+        btn.classList.remove('expanded');
     }
 }
 

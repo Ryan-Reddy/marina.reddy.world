@@ -78,7 +78,7 @@ export function renderBookCard() {
                     <div class="tagline">Right now.</div>
                     
                     <a href="https://www.amazon.nl/-/en/Marina-Avram/dp/B0GFGWVRR7" target="_blank" class="buy-button">
-                        Available on Amazon
+                        on Amazon
                     </a>
                 </div>
             </div>
