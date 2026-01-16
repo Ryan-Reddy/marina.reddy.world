@@ -73,7 +73,7 @@ export function renderBookCard() {
                         <p>Returning to the Heart is a gentle, grounded invitation to remember what the body already knows.</p>
                         <p>Blending neuroscience, ancestral wisdom, and embodied daily practice, this book explores the heart not only as an emotional center, but as an organ of perception — one that listens, regulates, and connects us to the Earth and to one another.</p>
                     </div>
-                    <button class="read-more-btn" id="readMoreBtn" onclick="toggleDescription()">Read more</button>
+                    <button class="read-more-btn" id="readMoreBtn" onclick="toggleDescription()" aria-label="Read more"></button>
                     
                     <div class="tagline">Right now.</div>
                     

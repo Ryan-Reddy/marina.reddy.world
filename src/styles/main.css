@@ -430,24 +430,30 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 35px;
-    background: linear-gradient(to bottom, transparent, rgba(250, 235, 230, 0.95));
+    height: 25px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5));
 }
 
 .read-more-btn {
     background: none;
     border: none;
     color: #5a6d62;
-    font-size: 0.85rem;
+    font-size: 1.5rem;
     cursor: pointer;
     padding: 8px 0;
-    font-weight: 500;
-    text-decoration: underline;
-    transition: color 0.3s ease;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.read-more-btn::before {
+    content: '↓';
 }
 
 .read-more-btn:hover {
     color: #3a4d42;
+    transform: translateY(2px);
 }
 
 .details {
