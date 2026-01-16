@@ -772,7 +772,7 @@ body {
     background-position: center;
     backdrop-filter: blur(3px);
     border-radius: 30px;
-    padding: 50px 40px;
+    padding: 70px 50px;
     box-shadow: 
         0 25px 70px rgba(210, 170, 165, 0.2),
         0 10px 30px rgba(215, 180, 175, 0.15);
